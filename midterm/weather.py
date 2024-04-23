@@ -31,3 +31,5 @@ if wind:
     print(f'The current wind in {query} is: {wind.text}')
 else:
     print('Could not find the current wind information')
+
+    
