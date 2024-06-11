@@ -5,8 +5,15 @@ st.set_page_config(
     layout="wide",
     page_icon='')
 
-st.title("Main Page")
+# --- Header Section ---
+with st.container():
+    st.title("Final Project")
+    st.subheader(
+        "Overview"
+    )
+    st.write(
+        "Our Final Project consists of:\n - Stock Charts\n - Stock News\n - Stock Prediction"
+    )
 
 # --- Sidebar ---
 st.sidebar.success("Select a page from above")
-
