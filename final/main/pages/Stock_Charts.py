@@ -134,3 +134,10 @@ if symbol:
     company_name = valid_symbols[symbol]  # Get company name from dictionary
     data = fetch_stock_data(symbol, period, interval)
     plot_stock_data(data, symbol, company_name, period, interval)
+    
+    st.download_button(
+        label = "Download as CSV",
+        data = data.to_csv(index = False),
+        file_name = f"{symbol}.csv",
+        mime = "text/csv",
+    )
