@@ -1,6 +1,5 @@
 import streamlit as st
 import datetime
-import time
 import pandas as pd
 import yfinance as yf
 from sklearn.ensemble import RandomForestClassifier
@@ -92,7 +91,9 @@ def main():
 
       # Display results
       st.subheader("Classification Report:")
-      st.text(classification_report(predictions["Target"], predictions["Predictions"]))
+      report = classification_report(predictions["Target"], predictions["Predictions"], output_dict=True)
+      accuracy = report["accuracy"] * 100
+      st.write(f"This machine learning model has an accuracy of {accuracy:.2f}%")
       st.markdown("---")
 
       # Tomorrow's prediction
